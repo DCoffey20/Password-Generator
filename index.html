@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <h1>Password Generator</h1>
+    </header>
+    <div>
+        <button onclick="userInputs()" type="button" class="btn btn-primary"> Generate Password</button>
+        <button type="button" class="btn btn-primary"> Copy Password</button>
+    </div>
+
+    <textarea name="Password" id="password" cols="50" rows="10"
+        placeholder="Click 'Generate Password' to create your new Password!"></textarea>
+
+    <script>
+        // Setting the characters for the password
+        let specialChar = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+        let numberChar = "0123456789";
+        let lowerCaseChar = "abcdefghijklmnopqrstuvwxyz";
+        let upperCaseChar = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        console.log(specialChar);
+        console.log(specialChar.length);
+        console.log(numberChar);
+        console.log(numberChar.length);
+        console.log(lowerCaseChar);
+        console.log(lowerCaseChar.length);
+        console.log(upperCaseChar);
+        console.log(upperCaseChar.length);
+        function userInputs() {
+            let numberOfChar = prompt("How many characters do you want your password to be? Must be between 8 and 128 characters.");
+            console.log("number of Char is " + numberOfChar);
+            while (numberOfChar <= 7 || numberOfChar >= 129) {
+                numberOfChar = prompt("Character length must be between 8 and 128. Please choose again.")
+                console.log("number of Char is " + numberOfChar);
+            };
+            let userSpecialChar = confirm("Do you want special characters in your password?");
+            console.log("Special Chars? " + userSpecialChar);
+            let userNumberChar = confirm("Do you want number characters in your password?");
+            console.log("Number Chars? " + userNumberChar);
+            let userLowerCaseChar = confirm("Do you want lower case characters in your password?");
+            console.log("Lower Case Chars? " + userLowerCaseChar);
+            let userUpperCaseChar = confirm("Do you want upper case characters in your password?");
+            console.log("Upper Case Chars? " + userUpperCaseChar);
+        };
+
+    </script>
+</body>
+
+</html>
