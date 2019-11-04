@@ -11,17 +11,21 @@
 </head>
 
 <body>
-    <header>
-        <h1 >Password Generator</h1>
-    </header>
-    <!-- Generate Password button now begins promts and confirm user questions on click instead of at start of page load. YAY!!!! -->
-    <div>
-        <button onclick="passwordGenerator()" type="button" class="btn btn-primary"> Generate Password</button>
-        <button type="button" class="btn btn-primary"> Copy Password</button>
+    <div class="card text-center offset-2 col-8 offset-2 mt-5">
+        <header class="row justify-content-center" style="border-bottom: dimgray;">
+            <h1>Password Generator</h1>
+        </header>
+        <!-- Generate Password button now begins promts and confirm user questions on click instead of at start of page load. YAY!!!! -->
+        <div class="row justify-content-center">
+            <textarea name="Password" id="passwordArea" cols="175" rows="5"
+                placeholder="Click 'Generate Password' to create your new Password!" class="pl-2 mx-3"
+                style="border-style: dashed;"></textarea>
+        </div>
+        <div class="btn-toolbar justify-content-center">
+            <button onclick="passwordGenerator()" type="button" class="btn btn-primary my-2 mx-5 float-left"> Generate Password</button>
+            <button type="button" class="btn btn-primary my-2 mx-5 float-right"> Copy Password</button>
+        </div>
     </div>
-
-    <textarea name="Password" id="passwordArea" cols="50" rows="10"
-        placeholder="Click 'Generate Password' to create your new Password!"></textarea>
 
     <script>
         // Setting the characters for the password
@@ -82,7 +86,7 @@
                 console.log("The Password is " + password)
             };
 
-            document.getElementById("passwordArea").value = password;
+            document.getElementById("passwordArea").value ="Your New Password is : " + password;
 
 
         };
