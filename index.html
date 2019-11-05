@@ -23,7 +23,7 @@
         </div>
         <div class="btn-toolbar justify-content-center">
             <button onclick="passwordGenerator()" type="button" class="btn btn-primary my-2 mx-5 float-left"> Generate Password</button>
-            <button type="button" class="btn btn-primary my-2 mx-5 float-right"> Copy Password</button>
+            <button onclick="copyPassword()" type="button" class="btn btn-primary my-2 mx-5 float-right"> Copy Password</button>
         </div>
     </div>
 
@@ -86,9 +86,14 @@
                 console.log("The Password is " + password)
             };
 
-            document.getElementById("passwordArea").value ="Your New Password is : " + password;
+            document.getElementById("passwordArea").value =password;
+        };
 
-
+        function copyPassword() {
+            let clipboard = document.getElementById("passwordArea");
+            clipboard.select();
+            document.execCommand("copy");
+            console.log("The copied password is " + clipboard.value);
         };
 
 
